@@ -1,3 +1,4 @@
+# メモ化不要なのと若干説明しにくいのでC++の方を推奨
 def dfs(idx, prod):
     if idx == N:
         if prod == X:
