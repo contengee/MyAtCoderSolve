@@ -29,12 +29,12 @@ uf = UnionFind(N+1)
 for u, v in edges:
     uf.union(u, v)
 
-no_path = set()
+no_path = set() # set()は高速探索（ソート二分木）。配列にするとaddの部分（次のコメント行）が低速になる為TLE
 for x, y in XY:
-    no_path.add((uf.find(x), uf.find(y)))
+    no_path.add((uf.find(x), uf.find(y))) # setを使用しているので対数時間 log(K)の検索時間になる
 
 for p, q in PQ:
-  if (uf.find(p), uf.find(q)) in no_path or (uf.find(q), uf.find(p)) in no_path:
+  if (uf.find(p), uf.find(q)) in no_path or (uf.find(q), uf.find(p)) in no_path: # or 例）4-1クエリが飛んできた時に1-4で対応可能にする為
     print('No')
   else:
     print('Yes')
