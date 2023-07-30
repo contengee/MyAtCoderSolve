@@ -33,14 +33,8 @@ no_path = set()
 for x, y in XY:
     no_path.add((uf.find(x), uf.find(y)))
 
-memo = {}
 for p, q in PQ:
-    if (p, q) in memo:
-        print(memo[(p, q)])
-    else:
-        if (uf.find(p), uf.find(q)) in no_path or (uf.find(q), uf.find(p)) in no_path:
-            memo[(p, q)] = 'No'
-            print('No')
-        else:
-            memo[(p, q)] = 'Yes'
-            print('Yes')
+  if (uf.find(p), uf.find(q)) in no_path or (uf.find(q), uf.find(p)) in no_path:
+    print('No')
+  else:
+    print('Yes')
