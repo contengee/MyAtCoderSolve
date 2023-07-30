@@ -2,7 +2,7 @@ X, Y, Z = map(int, input().split())
 S = input()
 
 n = len(S)
-dp = [0, Z]
+dp = [0, Z] # dp[Capsオフの時の最小値、Capオンの時の最小値] でdpする
 for i in range(n):
     dp_new = [0, 0]
     if S[i] == 'a':
