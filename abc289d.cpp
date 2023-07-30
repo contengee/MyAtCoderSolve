@@ -62,13 +62,12 @@ int main() {
     rep(i, M) mochi[B[i]] = true;
 
     //dp[i]:i段目に到達できるかどうか
-    vector<int> dp(X+1);
+    vector<int> dp(X+1); // 初期値未定義だとint型は0なのでfalse
     dp[0] = true;
-    for(int i=0; i<=X; i++){
-        if(!dp[i]) continue;
-        //モチが置いてあれば動けない
-        if(mochi[i]) continue;
-        for(auto a : A){
+    for(int i=0; i<=X; i++){ // 段差0～X（10^5）まで繰り返す
+        if(!dp[i]) continue; // 到達不可能なので飛ばす
+        if(mochi[i]) continue; // モチが置いてあれば動けないので飛ばす
+        for(auto a : A){ // N（ロボットが取りうる遷移数）<=10なので計算量はO(NX)=10^6に収まる
             int next = i + a;
             //Xを飛び越してなければロボットを進める
             if(next <= X){
