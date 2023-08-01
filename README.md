@@ -43,7 +43,8 @@ php abc213d.php input.txt
 ### Bash
 Bashを実行するには以下のコマンドを使用します：
 ```bash
-bash abc213d.sh input.txt
+chmod +x abc213d.sh
+./abc213d.sh input.txt
 ```
 
 ### Awk
