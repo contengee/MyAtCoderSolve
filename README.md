@@ -24,7 +24,7 @@ AtCoderの問題への便利なリンクを提供しているサイトがある�
 ### C++
 C++をコンパイル・実行するには以下のコマンドを使用します：
 ```bash
-g++ abc213d.cpp -o abc213d
+g++ abc213d.cpp -std=c++17 -I . -o abc213d
 ./abc213d input.txt
 ```
 
@@ -58,4 +58,9 @@ TypeScriptを実行するには以下のコマンドを使用します：
 ```bash
 tsc abc213d.ts
 node abc213d.js input.txt
+```
+
+### WSL2上での設定
+```bash
+alias g++ac='g++ -std=gnu++17 -Wall -Wextra -O2 -D_DEBUG -I .'
 ```
