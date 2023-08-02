@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
+#include <atcoder/all>
 using namespace std;
+using namespace atcoder;
 using ll = long long;
 using ull = unsigned long long;
 using pii = pair<int, int>;
@@ -45,6 +47,7 @@ template <class T, class... Args> void debug_out(const T& x, const Args& ... arg
 #endif
 struct fast_ios { fast_ios() { cin.tie(nullptr); ios::sync_with_stdio(false); cout << fixed << setprecision(20); cerr << fixed << setprecision(7); }; } fast_ios_;
 /////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 int main(){
     ll N, X; cin >> N >> X;
