@@ -54,19 +54,19 @@ int main(){
     vector<vector<ll>> A(N); // 縦N行 横は可変
     rep(i, N){
         int L; cin >> L;
-        A[i].resize(L);
-        rep(j, L) cin >> A[i][j];
+        A[i].resize(L); // A[i]の長さをLにする
+        rep(j, L) cin >> A[i][j]; // A[i][j]を入力
     }
 
     int ans = 0;
-    auto dfs = [&](auto dfs, ll val, int idx) -> void {
+    auto dfs = [&](auto dfs, ll val, int idx) -> void { // dfsの中でdfsを呼ぶ (再帰) (lambda式) (型推論) 
         if(idx == N){
-            ans += val == X;
+            ans += val == X; // valがXと等しいときにansに1を足す
             return;
         }
 
-        for(auto a: A[idx]){
-            if(val <= X / a) dfs(dfs, val * a, idx + 1);
+        for(auto a: A[idx]){ // A[idx]の中身をaに入れる (auto型) 
+            if(val <= X / a) dfs(dfs, val * a, idx + 1); // val*a <= X が成り立つ時にdfsを呼ぶ オーバーフローしないように
         }
     };
     dfs(dfs, 1ll, 0);
